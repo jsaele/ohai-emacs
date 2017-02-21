@@ -66,13 +66,13 @@
   (use-package material-theme)
   (load-theme 'material)
 
-  (set-face-background 'default "#000")
+  (set-face-background 'default "#333")
 
-  (set-face-background 'region "#223355")
-  (set-face-background 'fringe "#000")
+  (set-face-background 'region "#37688d")
+  (set-face-background 'fringe "#333")
   (set-face-attribute
    'linum nil
-   :foreground "#678" :background "#000" :height 0.9)
+   :foreground "#678" :background "#333" :height 0.9)
   (set-face-attribute
    'linum-highlight-face nil
    :foreground "#96989c" :background "#263238" :height 0.9)
@@ -104,8 +104,8 @@
      (run-hooks 'ohai-appearance/light-hook)))))
 
 ;; Maximise the Emacs frame if that's how you like it.
-(if (equal ohai-personal-taste/window-state 'maximised)
-    (set-frame-parameter nil 'fullscreen 'maximized))
+(if (equal ohai-personal-taste/window-state 'fullscreen)
+    (set-frame-parameter nil 'fullscreen 'fullboth))
 
 ;; Don't defer screen updates when performing operations.
 (setq redisplay-dont-pause t)
