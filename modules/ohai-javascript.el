@@ -35,6 +35,7 @@
 (use-package js2-mode
   :mode (("\\.js$" . js2-mode)
          ("\\.es6\\'" . js2-mode)
+         ("\\.jsx\\'" . js2-mode)
          ("\\.ejs\\'" . js2-mode))
   :interpreter "node"
   :commands js2-mode
