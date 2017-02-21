@@ -54,7 +54,11 @@
    (ohai-clojure "Clojure language support" :optional)
    (ohai-erlang "Erlang language support" :optional)
    (ohai-elixir "Elixir language support" :optional)
-   (ohai-haskell "Haskell language support" :optional)
+   (ohai-haskell "Haskell language support" :recommended)
+   (ohai-elm "Elm language support" :recommended)
+   (ohai-ag "Silver searcher support" :recommended)
+   (ohai-restclient "Restcleint support" :recommended)
+   (ohai-fsharp "Fsharp language support" :recommended)
    (ohai-flow "the Flow type checker for JS" :optional)))
 
 (require 'cl)
