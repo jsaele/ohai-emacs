@@ -48,7 +48,8 @@
 ;; Vertical ido.
 (use-package ido-vertical-mode
   :config
-  (ido-vertical-mode))
+  (ido-vertical-mode)
+  (setq ido-vertical-define-keys 'C-n-and-C-p-only))
 
 ;; Improved fuzzy matching.
 (use-package flx-ido
