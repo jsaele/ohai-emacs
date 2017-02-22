@@ -47,7 +47,7 @@
    (ohai-smart-mode-line "cleaner, lighter modeline (no Nyan Cat)" :optional)
    (ohai-ext-window-nav "alternative window navigation" :optional)
    (ohai-html "HTML, CSS and friends" :optional)
-   (ohai-markdown "Markdown support" :optional)
+   (ohai-markdown "Markdown support" :recommended)
    (ohai-javascript "JavaScript language support" :optional)
    (ohai-js-web-mode "alternative JS support using web-mode" :optional)
    (ohai-purescript "PureScript language support" :optional)
