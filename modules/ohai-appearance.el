@@ -104,7 +104,7 @@
      (run-hooks 'ohai-appearance/light-hook)))))
 
 ;; Maximise the Emacs frame if that's how you like it.
-(if (equal ohai-personal-taste/window-state 'fullscreen)
+(if (equal ohai-personal-taste/window-state 'maximised)
     (set-frame-parameter nil 'fullscreen 'fullboth))
 
 ;; Don't defer screen updates when performing operations.

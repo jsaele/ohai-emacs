@@ -30,12 +30,11 @@
   :type '(choice (const :tag "Yes" t)
                  (const :tag "No" nil)))
 
-(defcustom ohai-personal-taste/window-state 'fullscreen
+(defcustom ohai-personal-taste/window-state 'maximised
   "Should Emacs maximise its frame on startup, or leave it alone?"
   :group 'ohai-emacs
   :type '(choice (const :tag "Normal" normal)
-                 (const :tag "Maximise" maximised)
-                 (const :tag "Fullscreen" fullscreen)))
+                 (const :tag "Maximise" maximised)))
 
 (defcustom ohai-personal-taste/style 'light
   "Light or dark colour scheme?"

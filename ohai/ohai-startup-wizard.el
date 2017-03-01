@@ -26,8 +26,7 @@
   (x-popup-dialog
    t '("Normal or maximised window?"
        ("Normal" . normal)
-       ("Maximised" . maximised))
-       ("Fullscreen" . fullscreen)))
+       ("Maximised" . maximised))))
 
 (defun ohai-startup-wizard/get-style ()
   (x-popup-dialog
