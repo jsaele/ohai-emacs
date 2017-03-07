@@ -79,5 +79,53 @@
         (other . "java")))
 
 
+;; Move this calc hours worked func somewhere else
+(defun time-to-decimal (time) (+ (floor time) (/ (* 100 (- time (floor time))) 60)))
+
+(defun calc-hours-worked ()
+  (interactive)
+  (setq line (buffer-substring-no-properties (line-beginning-position) (line-end-position)))
+  (string-match "[0-9]\{2\}.[0-9]\{2\}" line)
+  (setq start (string-to-number (match-string 0 line)))
+  (string-match "[0-9]\{2\}.[0-9]\{2\}" line 10)
+  (setq end (string-to-number (match-string 0 line)))
+  (insert (format "\t-- %0.2f" (- (time-to-decimal end) (time-to-decimal start)))))
+
+;;(global-set-key (kbd "C-c C-h") 'calc-hours-worked)
+
+
+(defun my/return-time-diff-frac-hours ()
+  (interactive)
+  (let (begin-hh begin-mm end-hh end-mm diff)
+    (save-excursion
+      ;; $end-time      = (search back from pointer for previous instance of HHMM)
+      ;; $begin-time    = (search for second previous instance of HHMM)
+      (if (re-search-backward (concat "^\\([0-2][0-9]\\)\\([0-5][0-9]\\)"
+                                      "\\(?:.*\n\\)"
+                                      "\\([0-2][0-9]\\)\\([0-5][0-9]\\)"
+                                      "\\(.*\n\\)"
+                                      ) nil :noerror)
+          (progn
+            ;; $begin-hour    = $begin-time[0,1]
+            ;; $begin-minute  = $begin-time[2,3]
+            (setq begin-hh (string-to-number (match-string 1)))
+            (setq begin-mm (string-to-number (match-string 2)))
+            ;; $end-hour      = $end-time[0,1]
+            ;; $end-minute    = $end-time[2,3]
+            (setq end-hh (string-to-number (match-string 3)))
+            (setq end-mm (string-to-number (match-string 4)))
+            ;; $total-hours   = $end-hour - $begin-hour
+            ;; $total-minutes = $end-minutes - $begin-minutes
+            ;; return $total-hours + ($total-minutes * 0.01666666667)
+            (setq diff (/ (- (+ end-mm  ; end minutes
+                                (* 60 end-hh))
+                             (+ begin-mm ; begin minutes
+                                (* 60 begin-hh)))
+                          60.0)))
+        (message "Unable to find time strings on consecutive lines.")))
+    (when diff
+      (insert (number-to-string diff)))))
+
+(global-set-key (kbd "C-c C-h") 'my/return-time-diff-frac-hours)
 
 (provide 'ohai-codestyle)
