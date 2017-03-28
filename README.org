@@ -1,3 +1,5 @@
+This is my personal fork. Creds to author for a sweet config.
+
 * Ohai Emacs
 
 While it is certainly true that Emacs is the most powerful text editor in the world, your first impression of it may be less favourable, because its default configuration really just isn't all that great.
