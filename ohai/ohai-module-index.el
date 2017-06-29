@@ -57,9 +57,10 @@
    (ohai-haskell "Haskell language support" :recommended)
    (ohai-elm "Elm language support" :recommended)
    (ohai-ag "Silver searcher support" :recommended)
+   (ohai-typescript "TypeScript support" :recommended)
    (ohai-restclient "Restcleint support" :recommended)
    (ohai-fsharp "Fsharp language support" :recommended)
-   (ohai-flow "the Flow type checker for JS" :optional)))
+   (ohai-csharp "C# language support" :recommended)))
 
 (require 'cl)
 (defcustom ohai/modules (mapcar #'car
