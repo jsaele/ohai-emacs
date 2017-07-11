@@ -60,6 +60,7 @@
    (ohai-typescript "TypeScript support" :recommended)
    (ohai-restclient "Restcleint support" :recommended)
    (ohai-fsharp "Fsharp language support" :recommended)
+   (ohai-react "React js support" :recommended)
    (ohai-csharp "C# language support" :recommended)))
 
 (require 'cl)
