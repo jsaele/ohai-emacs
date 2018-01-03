@@ -36,10 +36,12 @@
          ("\\.as[cp]x\\'" . web-mode)
          ("\\.erb\\'" . web-mode)
          ("\\.mustache\\'" . web-mode)
+         ("\\.scss\\'" . web-mode)
          ("\\.djhtml\\'" . web-mode))
   :config
   ;; Highlight the element under the cursor.
   (setq-default web-mode-enable-current-element-highlight t)
+  (setq web-mode-css-indent-offset 2)
   ;; Key for renaming tags
   (bind-keys :map web-mode-map
              ("C-c C-r" . 'mc/mark-sgml-tag-pair)))
