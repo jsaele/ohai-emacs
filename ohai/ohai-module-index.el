@@ -62,6 +62,8 @@
    (ohai-restclient "Restcleint support" :recommended)
    (ohai-fsharp "Fsharp language support" :recommended)
    (ohai-react "React js support" :recommended)
+   (ohai-sass "SASS Support" :recommended)
+   (ohai-prettier "Prettier Support" :recommended)
    (ohai-csharp "C# language support" :recommended)))
 
 (require 'cl)
