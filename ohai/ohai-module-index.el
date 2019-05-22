@@ -58,7 +58,7 @@
    (ohai-elixir "Elixir language support" :optional)
    (ohai-haskell "Haskell language support" :recommended)
    (ohai-elm "Elm language support" :recommended)
-   (ohai-rust "Rust language support" :optional)))
+   (ohai-rust "Rust language support" :optional)
    (ohai-ag "Silver searcher support" :recommended)
    (ohai-wgrep-ag "Silver searcher support" :recommended)
    (ohai-typescript "TypeScript support" :recommended)
