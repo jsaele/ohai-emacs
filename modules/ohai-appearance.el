@@ -74,10 +74,14 @@
   (set-face-background 'fringe "#333")
   (set-face-attribute
    'linum nil
-   :foreground "#678" :background "#333" :height 0.9)
+   :foreground "#678"
+   ;; :background "#333"
+   :height 0.9)
   (set-face-attribute
    'linum-highlight-face nil
-   :foreground "#96989c" :background "#263238" :height 0.9)
+   :foreground "#96989c"
+   ;; :background "#263238"
+   :height 0.9)
   (set-face-foreground 'which-func "#7f9f7f")
 
   (set-face-foreground 'term-color-black "#3f3f3f")

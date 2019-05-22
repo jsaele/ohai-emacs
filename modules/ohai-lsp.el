@@ -1,7 +1,7 @@
 ;;; -*- lexical-binding: t -*-
-;;; ohai-flow.el --- JavaScript is slightly less horrid with types.
+;;; ohai-lsp.el --- Language Server Protocol support.
 
-;; Copyright (C) 2015 Bodil Stokke
+;; Copyright (C) 2018 Bodil Stokke
 
 ;; Author: Bodil Stokke <bodil@bodil.org>
 
@@ -20,20 +20,24 @@
 
 ;;; Code:
 
-(use-package flow-mode
-  :config
-  (with-eval-after-load 'flycheck
-    (flycheck-add-mode 'javascript-flow 'flow-mode)
-    (flycheck-add-mode 'javascript-eslint 'flow-mode)
-    (flycheck-add-next-checker 'javascript-flow 'javascript-eslint))
-  (with-eval-after-load 'company
-    (add-to-list 'company-backends 'company-flow))
-  (with-eval-after-load 'projectile
-    (add-to-list 'projectile-project-root-files ".flowconfig"))
-  (setq flow-binary (or (ohai/resolve-exec "flow") "flow"))
-  (add-to-list 'auto-mode-alist '("\\.flowconfig\\'" . conf-mode)))
+;; Basic lsp-mode config.
+;; Language modules will add their own lsp setup if this is loaded.
+(use-package lsp-mode)
+
+(with-eval-after-load "company"
+  (use-package company-lsp
+    :after lsp-mode
+    :config
+    (push 'company-lsp company-backends)))
+
+(use-package lsp-ui
+  :after lsp-mode
+  :hook (lsp-mode . lsp-ui-mode)
+  :bind (:map lsp-ui-mode-map
+              ("M-." . lsp-ui-peek-find-definitions)
+              ("M-?" . lsp-ui-peek-find-references)))
 
 
 
-(provide 'ohai-flow)
-;;; ohai-flow.el ends here
+(provide 'ohai-lsp)
+;;; ohai-lsp.el ends here
