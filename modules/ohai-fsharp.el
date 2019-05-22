@@ -5,4 +5,6 @@
   :commands fsharp-mode
   )
 
+(setq-default fsharp-indent-offset 2)
+
 (provide 'ohai-fsharp)

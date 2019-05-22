@@ -36,6 +36,8 @@
   (use-package material-theme)
   (load-theme 'material-light)
 
+  ;; Font-size temp fix
+  (set-face-attribute 'default nil :height 180)
   (set-face-attribute 'mode-line nil
                       :foreground "#cccccc"
                       :background "#000000"
