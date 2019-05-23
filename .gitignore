@@ -21,3 +21,6 @@ projectile.cache
 /games
 /emojis
 /abbrev_defs
+.cache
+.lsp-session-v1
+transient
