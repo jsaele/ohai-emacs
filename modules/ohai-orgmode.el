@@ -43,4 +43,9 @@
     (with-eval-after-load "org"
       (define-key org-mode-map (kbd "C-c M-l") 'org-cliplink))))
 
+(require 'org)
+(define-key global-map "\C-cl" 'org-store-link)
+(define-key global-map "\C-ca" 'org-agenda)
+(setq org-log-done t)
+
   (provide 'ohai-orgmode)
