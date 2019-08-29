@@ -66,6 +66,7 @@
    (ohai-fsharp "Fsharp language support" :recommended)
    (ohai-react "React js support" :recommended)
    (ohai-sass "SASS Support" :recommended)
+   (ohai-scala "scala Support" :recommended)
    (ohai-prettier "Prettier Support" :optional)
    (ohai-csharp "C# language support" :recommended)))
 

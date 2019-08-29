@@ -49,6 +49,7 @@
   ;; Configure js2-mode good.
   (setq-default
    js2-mode-indent-ignore-first-tab t
+   js2-basic-offset 2
    js2-strict-inconsistent-return-warning nil
    js2-global-externs
    '("module" "require" "__dirname" "process" "console" "JSON" "$" "_"))
