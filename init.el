@@ -20,6 +20,9 @@
 
 ;;; Code:
 
+;; Face attrib
+(set-face-attribute 'default nil :height 170)
+
 ;; Do an Emacs version check before going any further.
 (when (or (< emacs-major-version 24)
           (and (= emacs-major-version 24) (< emacs-minor-version 4)))
@@ -80,6 +83,3 @@ Your installed Emacs reports:
 
 ;; Load the user's config, if it exists.
 (load (concat dotfiles-dir "user.el") 'noerror)
-
-;; Face attrib
-(set-face-attribute 'default nil :height 180)
