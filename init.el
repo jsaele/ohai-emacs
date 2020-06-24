@@ -23,6 +23,8 @@
 ;; Face attrib
 (set-face-attribute 'default nil :height 170)
 
+(setq ring-bell-function 'ignore)
+
 ;; Do an Emacs version check before going any further.
 (when (or (< emacs-major-version 24)
           (and (= emacs-major-version 24) (< emacs-minor-version 4)))
