@@ -27,9 +27,10 @@
 (load-library "iso-transl")
 
 ;; Super as meta.
-(setq mac-option-key-is-meta nil)
+;;(setq mac-option-key-is-meta nil)
 (setq mac-command-key-is-meta t)
 (setq mac-command-modifier 'meta)
+(setq mac-function-modifier 'control)
 (setq mac-option-modifier 'alt)
 
 ;; Always ask for y/n keypress instead of typing out 'yes' or 'no'
